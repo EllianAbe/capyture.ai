@@ -1,0 +1,141 @@
+/* Definir fonte padrão */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Centralizar o conteúdo na página */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilo do título principal */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+/* Estilo da mensagem de instrução */
+.message {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+/* Estilo do botão de câmera */
+.camera-btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 16px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-bottom: 24px;
+}
+
+.camera-btn:hover {
+    background-color: #0069d9;
+}
+
+/* Estilo do botão de upload */
+.upload-btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 16px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-bottom: 24px;
+}
+
+.upload-btn:hover {
+    background-color: #0069d9;
+}
+
+/* Estilo da seção de vídeo */
+.video-section {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capyground {
+    background-image: url('./capy.gif');
+}
+
+/* Estilo da mensagem de reconhecimento */
+.recognized-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    font-size: 48px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.recognized-message p {
+    margin-bottom: 16px;
+}
+
+/* Estilo do background com animação de reconhecimento */
+.recognized-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-image: url("../images/recognized-background.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeInOut 4s ease-in-out;
+    display: none;
+}
+
+.recognized-background.show {
+    display: block;
+}
+
+/* Animação do background de reconhecimento */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
