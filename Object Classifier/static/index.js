@@ -74,6 +74,7 @@ document.getElementById('source-toggle').addEventListener('change', function () 
     } else {
         uploadInput.style.display = 'none';
         submitButton.style.display = 'none';
+        document.getElementById("source").submit();
     }
 });
 

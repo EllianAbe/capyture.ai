@@ -5,14 +5,13 @@ from login import login_bp
 from static.classifier.keras_model import CapyModel
 import base64
 import cv2
-import os
 import tempfile
 import json
 
 app = Flask(__name__)
 app.register_blueprint(login_bp)
 
-camera = cv2.VideoCapture(0)
+camera = None
 
 uploaded_video = None
 capy_model = CapyModel()
@@ -26,7 +25,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/camera')
-def camera():
+def _camera():
     uploaded_video = None
     return index()
 
@@ -35,14 +34,22 @@ def gen_frames_and_boolean():
     
     while True:
         if uploaded_video:
+            if camera:
+                camera.release()
+                camera = None
+            
             ret, frame = uploaded_video.read()
 
             if not ret:
                 uploaded_video.set(cv2.CAP_PROP_POS_FRAMES, 0)
                 continue    
         else:
+
+            if not camera:
+                camera = cv2.VideoCapture(0)
+
             ret, frame = camera.read()
-            
+
             if not ret:
                 continue
         

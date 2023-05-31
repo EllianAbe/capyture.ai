@@ -9,10 +9,10 @@ class CapyModel():
         np.set_printoptions(suppress=True)
 
         # Load the model
-        self.model = load_model("static/classifier/keras_Model.h5", compile=False)
+        self.model = load_model("object classifier/static/classifier/keras_Model.h5", compile=False)
 
         # Load the labels
-        with open("static/classifier/labels.json", "r") as fp:
+        with open("object classifier/static/classifier/labels.json", "r") as fp:
            self.class_names = json.load(fp)
  
 

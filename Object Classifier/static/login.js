@@ -10,7 +10,7 @@ document.getElementById('login-form').addEventListener('submit', function (event
 
     xhr.onreadystatechange = function () {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-            window.location.href = '/index.html';
+            window.location.href = '/index';
         }
     }
 
