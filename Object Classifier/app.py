@@ -20,6 +20,10 @@ capy_model = CapyModel()
 def main():
     return render_template('login.html')
 
+@app.route('/forgot-password')
+def forgot_password():
+    return render_template('forgot-password.html')
+
 @app.route('/index')
 def index():
     return render_template('index.html')
